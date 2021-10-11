@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>LshTech Blog</title>
+    <link>https://lshtech2021.github.io/</link>
+    <description>Recent content on LshTech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Oct 2021 21:30:00 +0000</lastBuildDate><atom:link href="https://lshtech2021.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>How to Install ownCloud on CentOS 7</title>
+      <link>https://lshtech2021.github.io/2021/10/10/how-to-install-owncloud-on-centos-7/</link>
+      <pubDate>Sun, 10 Oct 2021 21:30:00 +0000</pubDate>
+      
+      <guid>https://lshtech2021.github.io/2021/10/10/how-to-install-owncloud-on-centos-7/</guid>
+      <description>Introduction OwnCloud is a popular and open source file hosting service. You can deploy OwnCloud in your own server and secure your files by multi-factor authentication, encryption, and file lifecycle management. You can also share files with others and control users&#39; access right of the files and folders.
+In this tutorial, we will setup a personal file hosting service with ownCloud 10.8 on a CentOS 7 server.
+Prerequisites Create a server instance with CentOS 7 and login as root.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lshtech2021.github.io/search/placeholder/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lshtech2021.github.io/search/placeholder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lshtech2021.github.io/top/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lshtech2021.github.io/top/about/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Posts Archive</title>
+      <link>https://lshtech2021.github.io/top/archive/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lshtech2021.github.io/top/archive/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="LshTech Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="https://lshtech2021.github.io/img/home-bg-2.jpg">
+    <meta property="twitter:image" content="https://lshtech2021.github.io/img/home-bg-2.jpg" />
+    
+
+    
+    <meta name="title" content="How to Install ownCloud on CentOS 7" />
+    <meta property="og:title" content="How to Install ownCloud on CentOS 7" />
+    <meta property="twitter:title" content="How to Install ownCloud on CentOS 7" />
+    
+
+    
+    <meta name="description" content="ownCloud is a popular and open source file hosting service. You can deploy OwnCloud in your own server and secure your files by multi-factor authentication, encryption, and file lifecycle management. You can also share files with others and control users&#39; access right of the files and folders. In this tutorial, we will setup a personal file hosting service with ownCloud 10.8 on a CentOS 7 server.">
+    <meta property="og:description" content="ownCloud is a popular and open source file hosting service. You can deploy OwnCloud in your own server and secure your files by multi-factor authentication, encryption, and file lifecycle management. You can also share files with others and control users&#39; access right of the files and folders. In this tutorial, we will setup a personal file hosting service with ownCloud 10.8 on a CentOS 7 server." />
+    <meta property="twitter:description" content="ownCloud is a popular and open source file hosting service. You can deploy OwnCloud in your own server and secure your files by multi-factor authentication, encryption, and file lifecycle management. You can also share files with others and control users&#39; access right of the files and folders. In this tutorial, we will setup a personal file hosting service with ownCloud 10.8 on a CentOS 7 server." />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="LshTech Blog, Blog, Personal site, Web, Microservice, Android, iOS, HTML5, Java, Python, Office, AI, Machine Learning, VPS, Web Hosting, Linux">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>How to Install ownCloud on CentOS 7-LshTech的博客 | LshTech Blog</title>
+
+    <link rel="canonical" href="/2021/10/10/how-to-install-owncloud-on-centos-7">
+
+    <link rel="stylesheet" href="/css/iDisqus.min.css"/>
+
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">LshTech Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/tech">tech</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/top/archive/">ARCHIVE</a></li>
+                    
+                        <li><a href="/top/about/">ABOUT</a></li>
+                    
+
+                    
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/post-bg-coffee.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/owncloud" title="ownCloud">
+                            ownCloud
+                        </a>
+                        
+                        <a class="tag" href="/tags/centos" title="CentOS">
+                            CentOS
+                        </a>
+                        
+                    </div>
+                    <h1>How to Install ownCloud on CentOS 7</h1>
+                    <h2 class="subheading">A detail guide on how to setup a cloud based personal storage.</h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                LshTech
+                             
+                            on 
+                            Sunday, October 10, 2021
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h2 id="introduction">Introduction</h2>
+<p><strong>OwnCloud</strong> is a popular and open source file hosting service. You can deploy OwnCloud in your own server and secure your files by multi-factor authentication, encryption, and file lifecycle management. You can also share files with others and control users' access right of the files and folders.</p>
+<p>In this tutorial, we will setup a personal file hosting service with ownCloud 10.8 on a CentOS 7 server.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<p>Create a server instance with CentOS 7 and login as <code>root</code>.</p>
+<h2 id="1-install-lamp-linux-apache-mysql-and-php-stack">1. Install LAMP (Linux, Apache, MySQL, and PHP) Stack</h2>
+<p>ownCloud requires a PHP-enabled webserver and a MySQL database, we need to install them at first.</p>
+<h3 id="install-mysql">Install MySQL</h3>
+<p>Update and install EPEL repository with following command:</p>
+<pre><code>$ yum update
+$ yum install epel-release yum-utils -y
+</code></pre>
+<p>Download and prepare MySQL repository:</p>
+<pre><code>$ wget https://dev.mysql.com/get/mysql80-community-release-el7-3.noarch.rpm --no-check-certificate
+$ rpm -Uvh mysql80-community-release-el7-3.noarch.rpm
+</code></pre>
+<p>Note, if you don&rsquo;t use <code>--no-check-certificate</code> option, this command may prompt following error:</p>
+<pre><code>ERROR: cannot verify download.opensuse.org's certificate, issued by ‘/C=US/O=Let's Encrypt/CN=R3’:
+  Issued certificate has expired.
+To connect to download.opensuse.org insecurely, use `--no-check-certificate`.
+</code></pre>
+<p>It&rsquo;s ready to install MySQL now:</p>
+<pre><code>$ yum install mysql-server
+</code></pre>
+<p>Start MySQL server with following command:</p>
+<pre><code>$ systemctl start mysqld
+</code></pre>
+<p>Check MySQL server status:</p>
+<pre><code>$ systemctl status mysqld`
+</code></pre>
+<p>If you see the following message, means MySQL is running:</p>
+<pre><code>Active: active (running) since Sat 2021-10-09 10:09:08 PDT; 7h ago
+</code></pre>
+<p>MySQL generates a temporary root password after installed, we need to change it. Find the temporary root password with following command:</p>
+<pre><code>$ grep 'password' /var/log/mysqld.log
+</code></pre>
+<p>The text <strong>pz7iaSrsCK&gt;9</strong> after <code>root@localhost:</code> is the temporary password:</p>
+<pre><code>2021-10-09T03:13:33.139046Z 6 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: pz7iaSrsCK&gt;9
+</code></pre>
+<p>Run following command:</p>
+<pre><code>$ mysql_secure_installation
+</code></pre>
+<p>Input the temporary password (in this tutorial is <strong>pz7iaSrsCK&gt;9</strong>), and set a new strong password as prompts:</p>
+<pre><code>The existing password for the user account root has expired. Please set a new password.
+New password:
+Re-enter new password:
+
+Tips:  
+A strong password is 8-12 characters long and includes numbers, special characters, uppercase, and lowercase letters.
+</code></pre>
+<p>Connect to MySQL with <code>mysql</code> client:</p>
+<pre><code>$ mysql -u root -p
+</code></pre>
+<p>Input your new MySQL root user password, if the installation works, you will login the console:</p>
+<pre><code>mysql&gt;
+</code></pre>
+<h3 id="install-apache-web-server-httpd">Install Apache Web Server (httpd)</h3>
+<p>Install httpd with following command:</p>
+<pre><code>$ yum -y install httpd mod_ssl
+</code></pre>
+<p>Start the service:</p>
+<pre><code>$ systemctl start httpd.service
+</code></pre>
+<p>Check service status:</p>
+<pre><code>$ systemctl status httpd.service
+</code></pre>
+<p>When the following message, means it is running:</p>
+<pre><code>Active: active (running) since Sat 2021-10-09 10:09:08 PDT; 7h ago
+</code></pre>
+<h3 id="install-php-73">Install PHP 7.3</h3>
+<p>Install REMI repository and enable PHP 7.3:</p>
+<pre><code>$ yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+$ yum-config-manager --enable remi-php73
+</code></pre>
+<p>Install PHP modules and other related software packages:</p>
+<pre><code>$ yum install openssl php php-common php-opcache php-mcrypt php-cli php-gd php-curl php-mysqlnd php-imagick php-imap php-intl php-json php-mbstring php-mysql php-ssh2 php-xml php-zip php-apcu php-redis redis-server wget
+</code></pre>
+<p>Restart httpd service:</p>
+<pre><code>$ systemctl restart httpd.service
+</code></pre>
+<h2 id="2-install-owncloud">2. Install ownCloud</h2>
+<p>We install ownCloud with binary distribution from <a href="https://download.owncloud.org/community">offical site</a>. You can find the latest release from this site, here we use <code>owncloud-complete-20200731</code>:</p>
+<pre><code>$ cd /var/www/html
+$ wget https://download.owncloud.org/community/owncloud-complete-20200731.tar.bz2
+$ tar -xjf owncloud-complete-20200731.tar.bz2
+</code></pre>
+<p>Create data and other folders:</p>
+<pre><code>$ mkdir -p /var/owncloud_data
+$ mkdir -p /var/www/html/owncloud/apps-external
+</code></pre>
+<p>Modify folder&rsquo;s owner/group and read/write permission:</p>
+<pre><code>$ chown apache:apache /var/owncloud_data
+$ chown apache:apache /var/www/html/owncloud/apps-external
+$ chmod 0770 /var/owncloud_data
+</code></pre>
+<p>Configure SELinux:</p>
+<pre><code>$ semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/owncloud/config'
+$ semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/owncloud/apps'
+$ semanage fcontext -a -t httpd_sys_rw_content_t '/var/www/html/owncloud/apps-external'
+$ semanage fcontext -a -t httpd_sys_rw_content_t '/var/owncloud_data'
+$ restorecon '/var/www/html/owncloud/config'
+$ restorecon '/var/www/html/owncloud/apps'
+$ restorecon '/var/www/html/owncloud/apps-external'
+$ restorecon '/var/owncloud_data'
+</code></pre>
+<h3 id="configure-database">Configure Database</h3>
+<p>Connect to MySQL with root user:</p>
+<pre><code>$ mysql -u root -p
+</code></pre>
+<p>Input MySQL root user password, and create a new database:</p>
+<pre><code>mysql&gt; CREATE DATABASE IF NOT EXISTS owncloud; 
+</code></pre>
+<p>Create a new user for ownColud:</p>
+<pre><code>mysql&gt; CREATE USER 'owncloud'@'localhost' IDENTIFIED BY 'password';
+</code></pre>
+<p>Replace the <code>password</code> with your own (use strong password). Grant privileges for user <code>owncloud</code> to database <code>owncloud</code>:</p>
+<pre><code>mysql&gt; GRANT ALL PRIVILEGES ON owncloud.* To 'owncloud'@'localhost' WITH GRANT OPTION;
+mysql&gt; FLUSH PRIVILEGES;
+</code></pre>
+<p>Run the following command, or else error will occurr when install ownCloud. The <code>password</code> is the same as the above:</p>
+<pre><code>mysql&gt; ALTER USER 'owncloud'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+</code></pre>
+<h3 id="install-owncloud">Install OwnCloud</h3>
+<p>Now it is ready to install ownCloud. Open <code>http://&lt;your server domain name or ip&gt;/owncloud</code>. Input the administrator name and password. Click &lsquo;Storage &amp; database&rsquo;:</p>
+<ul>
+<li>Data folder use <code>/var/owncloud_data</code></li>
+<li>Database user use <code>owncloud</code>, the password use the one you create above.</li>
+<li>Database name use <code>owncloud</code>, leave others no change.</li>
+</ul>
+<p>Click button <strong>Finish setup</strong>, and wait until install finished. This will take some times for ownCloud will create and initialize some database tables and setup configurations.</p>
+
+
+                
+
+                <hr>
+                <ul class="pager">
+                    
+                    
+                </ul>
+                
+<div id="disqus-comment"></div>
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-11 col-lg-offset-1
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                        
+                        
+                        
+                        
+                        
+                        
+                    </div>
+                </section>
+                
+
+                
+                
+                <section>
+                    <hr>
+                    <h5>FRIENDS</h5>
+                    <ul class="list-inline">
+                        
+                    </ul>
+                </section>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                   
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="LshTech Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+                   
+                    
+                    <li>
+                        <a href="mailto:haddy2014@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+
+                    
+                    
+                    
+
+                    
+
+		    
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lshtech2021">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+                </ul>
+		<p class="copyright text-muted">
+                    Copyright &copy; LshTech Blog 2021
+                    <br>
+                    <a href="https://lshtech2021.github.io/technotes">TechNotes</a> by <a href="https://github.com/technotes">LshTech</a>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+</body>
+</html>

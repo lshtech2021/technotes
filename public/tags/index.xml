@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on LshTech Blog</title>
+    <link>https://lshtech2021.github.io/tags/</link>
+    <description>Recent content in Tags on LshTech Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 10 Oct 2021 21:30:00 +0000</lastBuildDate><atom:link href="https://lshtech2021.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CentOS</title>
+      <link>https://lshtech2021.github.io/tags/centos/</link>
+      <pubDate>Sun, 10 Oct 2021 21:30:00 +0000</pubDate>
+      
+      <guid>https://lshtech2021.github.io/tags/centos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>ownCloud</title>
+      <link>https://lshtech2021.github.io/tags/owncloud/</link>
+      <pubDate>Sun, 10 Oct 2021 21:30:00 +0000</pubDate>
+      
+      <guid>https://lshtech2021.github.io/tags/owncloud/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
