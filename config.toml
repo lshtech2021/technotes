@@ -1,4 +1,4 @@
-baseurl = "https://lshtech2021.github.io"
+baseurl = "https://lshtech2021.github.io/technotes"
 title = "LshTech Blog"
 theme = "hugo-theme-cleanwhite"
 languageCode = "en-us"
