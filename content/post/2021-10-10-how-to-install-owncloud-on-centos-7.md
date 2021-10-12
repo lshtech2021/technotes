@@ -81,8 +81,7 @@ Input the temporary password (in this tutorial is **pz7iaSrsCK>9**), and set a n
     New password:
     Re-enter new password:
 
-    Tips:  
-    A strong password is 8-12 characters long and includes numbers, special characters, uppercase, and lowercase letters.
+>**Notes**：A strong password is 8-12 characters long and includes numbers, special characters, uppercase, and lowercase letters.
 
 Connect to MySQL with `mysql` client:
 
