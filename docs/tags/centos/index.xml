@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>CentOS on LshTech Blog</title>
-    <link>https://lshtech2021.github.io/tags/centos/</link>
+    <link>https://lshtech2021.github.io/technotes/tags/centos/</link>
     <description>Recent content in CentOS on LshTech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 10 Oct 2021 21:30:00 +0000</lastBuildDate><atom:link href="https://lshtech2021.github.io/tags/centos/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 10 Oct 2021 21:30:00 +0000</lastBuildDate><atom:link href="https://lshtech2021.github.io/technotes/tags/centos/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>How to Install ownCloud on CentOS 7</title>
-      <link>https://lshtech2021.github.io/2021/10/10/how-to-install-owncloud-on-centos-7/</link>
+      <link>https://lshtech2021.github.io/technotes/2021/10/10/how-to-install-owncloud-on-centos-7/</link>
       <pubDate>Sun, 10 Oct 2021 21:30:00 +0000</pubDate>
       
-      <guid>https://lshtech2021.github.io/2021/10/10/how-to-install-owncloud-on-centos-7/</guid>
+      <guid>https://lshtech2021.github.io/technotes/2021/10/10/how-to-install-owncloud-on-centos-7/</guid>
       <description>Introduction OwnCloud is a popular and open source file hosting service. You can deploy OwnCloud in your own server and secure your files by multi-factor authentication, encryption, and file lifecycle management. You can also share files with others and control users&#39; access right of the files and folders.
 In this tutorial, we will setup a personal file hosting service with ownCloud 10.8 on a CentOS 7 server.
 Prerequisites Create a server instance with CentOS 7 and login as root.</description>

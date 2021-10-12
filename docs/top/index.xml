@@ -2,25 +2,25 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tops on LshTech Blog</title>
-    <link>https://lshtech2021.github.io/top/</link>
+    <link>https://lshtech2021.github.io/technotes/top/</link>
     <description>Recent content in Tops on LshTech Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://lshtech2021.github.io/top/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language><atom:link href="https://lshtech2021.github.io/technotes/top/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://lshtech2021.github.io/top/about/</link>
+      <link>https://lshtech2021.github.io/technotes/top/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lshtech2021.github.io/top/about/</guid>
+      <guid>https://lshtech2021.github.io/technotes/top/about/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Posts Archive</title>
-      <link>https://lshtech2021.github.io/top/archive/</link>
+      <link>https://lshtech2021.github.io/technotes/top/archive/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://lshtech2021.github.io/top/archive/</guid>
+      <guid>https://lshtech2021.github.io/technotes/top/archive/</guid>
       <description></description>
     </item>
     
