@@ -57,7 +57,7 @@ Start MySQL server with following command:
 
 Check MySQL server status:
 
-    $ systemctl status mysqld`
+    $ systemctl status mysqld
 
 If you see the following message, means MySQL is running:
 
@@ -129,7 +129,8 @@ Restart httpd service:
 We install ownCloud with binary distribution from [offical site](https://download.owncloud.org/community). You can find the latest release from this site, here we use `owncloud-complete-20200731`:
 
     $ cd /var/www/html
-    $ wget https://download.owncloud.org/community/owncloud-complete-20200731.tar.bz2
+    $ wget https://download.owncloud.org/community/owncloud-complete-20200731.tar.bz2 --no-check-certificate
+    $ yum install bzip2
     $ tar -xjf owncloud-complete-20200731.tar.bz2
 
 Create data and other folders:
@@ -176,6 +177,13 @@ Replace the `password` with your own (use strong password). Grant privileges for
 Run the following command, or else error will occurr when install ownCloud. The `password` is the same as the above:
 
     mysql> ALTER USER 'owncloud'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+
+### Config firewall
+
+ownCloud use default http`80` port for remote connection, we need to open this port in the firewall. Use following command to  to open `80` port:
+
+    $ firewall-cmd --zone=public --add-port=80/tcp --permanent
+    $ firewall-cmd --reload
 
 ### Install OwnCloud
 
